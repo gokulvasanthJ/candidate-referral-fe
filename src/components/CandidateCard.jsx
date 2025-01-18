@@ -98,6 +98,8 @@ const CandidateCard = () => {
     }
   };
 
+  
+
   return (
     <div className="row">
       {candidates.map((candidate) => (
@@ -106,7 +108,7 @@ const CandidateCard = () => {
             <div className="row g-0">
               <div className="col-md-4">
                 <img
-                  src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" // Placeholder image
+                  src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" // Placeholder image
                   alt="Candidate"
                   className="img-fluid rounded-start"
                 />
