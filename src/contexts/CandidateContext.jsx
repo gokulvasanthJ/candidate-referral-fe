@@ -1,17 +1,21 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 
-// Create the context
+// Create context
 export const CandidateContext = createContext();
 
-// Create the provider component
-const ContextProvider = ({ children }) => {
+const CandidateContextProvider = ({ children }) => {
   const [candidates, setCandidates] = useState([]);
+  
+  // Define filterCandidates function
+  const filterCandidates = (criteria) => {
+    return candidates.filter(candidate => candidate.status === criteria);
+  };
 
   return (
-    <CandidateContext.Provider value={{ candidates, setCandidates }}>
+    <CandidateContext.Provider value={{ candidates, setCandidates, filterCandidates }}>
       {children}
     </CandidateContext.Provider>
   );
 };
 
-export default ContextProvider;
+export default CandidateContextProvider;

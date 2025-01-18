@@ -1,27 +1,20 @@
-import React, { useContext } from "react";
-import { CandidateContext } from "../contexts/CandidateContext";
+import React, { useContext } from 'react';
+import { CandidateContext } from '../contexts/CandidateContext';
 
 const Dashboard = () => {
-  const { candidates } = useContext(CandidateContext);
-
-  if (!candidates) {
-    return <p>Loading...</p>; // Handle undefined candidates gracefully
-  }
+  const { candidates, filterCandidates } = useContext(CandidateContext);
+  
+  // Example usage of filterCandidates
+  const filteredCandidates = filterCandidates('referred'); // Example filter criteria
 
   return (
     <div>
-      <h2>Candidate Dashboard</h2>
-      {candidates.length > 0 ? (
-        candidates.map((candidate, index) => (
-          <div key={index}>
-            <p>Name: {candidate.name}</p>
-            <p>Job Title: {candidate.jobTitle}</p>
-            <p>Status: {candidate.status}</p>
-          </div>
-        ))
-      ) : (
-        <p>No candidates available.</p>
-      )}
+      <h1>Dashboard</h1>
+      <ul>
+        {filteredCandidates.map(candidate => (
+          <li key={candidate.id}>{candidate.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };

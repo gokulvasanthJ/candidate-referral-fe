@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { CandidateContext } from "../contexts/CandidateContext";
 
-const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const SearchBar = () => {
+  const { setSearchTerm } = useContext(CandidateContext);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
-    onSearch(e.target.value);
   };
 
-  return <input type="text" value={searchTerm} onChange={handleSearch} placeholder="Search candidates..." />;
+  return (
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Search by status"
+        onChange={handleSearch}
+      />
+    </div>
+  );
 };
 
 export default SearchBar;
