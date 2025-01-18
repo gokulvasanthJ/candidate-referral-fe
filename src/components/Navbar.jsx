@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* Left links */}
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link className="nav-link" to="/candidate-card">
+            <Link className="nav-link" to="/">
               Dashboard
             </Link>
           </li>

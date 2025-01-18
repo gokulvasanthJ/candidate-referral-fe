@@ -9,8 +9,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<ReferralForm />} /> {/* Ensure the ReferralForm component exists */}
-        <Route path="/candidate-card" element={<CandidateCard />} />
+        <Route path="/refer" element={<ReferralForm />} /> {/* Ensure the ReferralForm component exists */}
+        <Route path="/" element={<CandidateCard />} />
         {/* Add more routes as necessary */}
       </Routes>
     </Router>
